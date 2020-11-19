@@ -1,6 +1,7 @@
 package ru.NikitaTokarevProduction.JavaBrain.Server;
 
 import java.net.ServerSocket;
+import java.net.Socket;
 
 public class InetLive {
 
@@ -17,7 +18,10 @@ public class InetLive {
 
             while (true) {
 
-                serverSocket.accept();
+                Socket socket = serverSocket.accept();
+
+                Thread thread = new Thread(new Root(socket));
+                thread.start();
 
             }
         } catch (Exception ex) {

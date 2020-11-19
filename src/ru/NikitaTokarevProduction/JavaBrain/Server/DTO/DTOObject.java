@@ -41,4 +41,9 @@ public class DTOObject extends ReadingObject {
 
         return this.allTime;
     }
+
+    public DTOObject getThis() {
+
+        return this;
+    }
 }

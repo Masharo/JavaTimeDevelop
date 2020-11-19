@@ -9,27 +9,23 @@ public class DTOSet extends DTOObject {
         super(dtoObject);
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus() {
 
-        if (this.status != status) {
+        if (status) {
 
-            if (status) {
+            setWorkTime();
+        } else {
 
-                setWorkTime();
-            } else {
-
-                setAllTime();
-            }
+            setAllTime();
         }
-        this.status = status;
     }
 
-    public void setAllTime() {
+    private void setAllTime() {
 
         this.allTime = workTime - Calendar.getInstance().getTimeInMillis();
     }
 
-    public void setWorkTime() {
+    private void setWorkTime() {
 
         this.workTime = Calendar.getInstance().getTimeInMillis();
     }

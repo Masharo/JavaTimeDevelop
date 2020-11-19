@@ -1,23 +1,28 @@
 package ru.NikitaTokarevProduction.JavaBrain.Server;
 
-import ru.NikitaTokarevProduction.JavaBrain.Server.DTO.DTOSet;
+import ru.NikitaTokarevProduction.JavaBrain.Server.DTO.DTOObject;
 
 public class FileOperator {
 
-    private DTOSet dtoSet;
+    private DTOObject dtoObject;
 
-    public FileOperator(DTOSet dtoSet) {
+    public boolean needSave(boolean status) {
 
-        this.dtoSet = dtoSet;
+        return dtoObject.isStatus() != status;
     }
 
-    private void saveFile() {
+    public FileOperator(DTOObject dtoObject) {
+
+        this.dtoObject = dtoObject;
+    }
+
+    public void saveFile(DTOObject dtoObject) {
 
 
     }
 
-    private void loadFile() {
+    public DTOObject loadFile() {
 
-
+        return new DTOObject();
     }
 }
